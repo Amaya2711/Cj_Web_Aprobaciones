@@ -1,0 +1,14 @@
+{
+  "name": "api-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^4.22.1",
+    "mssql": "^10.0.4"
+  }
+}
