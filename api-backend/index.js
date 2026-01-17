@@ -1,6 +1,6 @@
+import cors from 'cors';
 import express from 'express';
 import sql from 'mssql';
-import cors from 'cors';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -21,7 +21,7 @@ const config = {
   }
 };
 
-app.post('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
   const { usuario, password } = req.body;
   if (!usuario || !password) {
     return res.status(400).json({ error: 'Usuario y contraseña requeridos' });
@@ -45,7 +45,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-const PORT = parseInt(process.env.EXPRESS_PORT, 10) || 3000;
+const PORT = parseInt(process.env.EXPRESS_PORT, 10) || 3001;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`API backend escuchando en puerto ${PORT} (todas las interfaces)`);
 });
